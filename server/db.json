@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "email": "1",
+      "password": "$2a$04$59fNQVojVSTsZnUFZM1tsORvSTILI.kTJPLtKjSUBIx74N/M9GT1C",
+      "userId": "a66cc6d1-a9fe-4a27-be5e-516ce5ee6927",
+      "username": "1",
+      "currency": "MNT - Mongol Tugrik",
+      "balance": ""
+    }
+  ]
+}
