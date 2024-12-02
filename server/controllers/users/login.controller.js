@@ -19,12 +19,12 @@ export const loginController = async (req, res) => {
     res.status(400).json({ message: "Нууц үг таарахгүй байна" });
     return;
   }
-
   const token = jwt.sign(
     {
       userId: checkUser[0].userid,
       email: checkUser[0].email,
       username: checkUser[0].username,
+      isAdmin: true,
     },
     process.env.SECRET,
     { expiresIn: "30d" }

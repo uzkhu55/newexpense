@@ -10,8 +10,8 @@ const Lastrecords = ({ drill, setLastRecord }) => {
         <div className="flex items-center m-5 gap-4">
           <FaHome className="w-[40px] h-[40px]" />
           <div className="flex flex-col">
-            <div>{drills}</div>
-            <div>3 hours ago</div>
+            <div>{drill}</div>
+            <div>3 hours a ago</div>
           </div>
         </div>
         <div className="m-5 items-center">{setLastRecord}</div>

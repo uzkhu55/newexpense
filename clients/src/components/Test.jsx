@@ -1,18 +1,14 @@
-import { sql } from "../../database/index.js";
+import { Router } from "express";
+import { signinController } from "../controllers/users/sign-up.controller.js";
+import { loginController } from "../controllers/users/login.controller.js";
+import { authMiddleware } from "../middlewares/auth.js";
+import { getUsersInfo } from "../controllers/allUsers.js";
 
-export const getExpense = async (req, res) => {
-  const { userId } = res.locals;
+const userRouter = Router();
 
-  const result =
-    await sql`SELECT expense, category FROM users WHERE userId = ${userId}`;
-  if (result.length === 0) {
-    return res.status(404).json({ message: "User not found" });
-  }
-  const [{ expense, category }] = result;
-  res.json({
-    expense,
-    category,
-  });
+userRouter.route("/user/signup").post(signinController);
+userRouter.route("/user/login").post(loginController);
 
-  res.status(500).json({ message: "An error occurred while fetching data" });
-};
+userRouter.get("/user", authMiddleware, getUsersInfo);
+
+export default userRouter;

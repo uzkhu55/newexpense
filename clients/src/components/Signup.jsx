@@ -41,8 +41,6 @@ export const Signup = () => {
         router.push("/login");
       } catch (error) {
         console.log(error);
-
-        // setError(error.respones);
       }
     }
   };
